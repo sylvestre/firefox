@@ -354,7 +354,7 @@ def print_rust_bindings(idl, fd, relpath):
     # import statements
 
     for p in idl.productions:
-        if p.kind == "include" or p.kind == "cdata" or p.kind == "forward":
+        if p.kind in {"include", "cdata", "forward"}:
             continue
 
         if p.kind == "interface":
